@@ -1,0 +1,15 @@
+<launch>
+    <include file="$(find andreas_arm_config)/launch/planning_context.launch">
+        <arg name="load_robot_description" value="true" />
+    </include>
+
+    <node name="jacobian"
+        pkg="andreas_arm_control"
+        type="jacobian"
+        respawn="false"
+        output="screen">
+
+        <rosparam command="load"
+            file="$(find andreas_arm_control)/config/andreas_arm_control.yaml" />
+    </node>
+</launch>

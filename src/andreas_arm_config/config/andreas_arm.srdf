@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+
+<robot name="andreas_arm">
+    <group name="arm">
+        <chain base_link="base_link" tip_link="zeta_link" />
+    </group>
+</robot>
