@@ -204,26 +204,5 @@ include_directories(include ${catkin_INCLUDE_DIRS})
 add_executable(       usb           src/usb.cpp)
 target_link_libraries(usb           ${catkin_LIBRARIES})
 
-add_executable(       alpha_motor   src/alpha_motor.cpp)
-target_link_libraries(alpha_motor   ${catkin_LIBRARIES})
-
-add_executable(       beta_motor    src/beta_motor.cpp)
-target_link_libraries(beta_motor    ${catkin_LIBRARIES})
-
-add_executable(       gamma_motor   src/gamma_motor.cpp)
-target_link_libraries(gamma_motor   ${catkin_LIBRARIES})
-
-add_executable(       delta_motor   src/delta_motor.cpp)
-target_link_libraries(delta_motor   ${catkin_LIBRARIES})
-
-add_executable(       epsilon_motor src/epsilon_motor.cpp)
-target_link_libraries(epsilon_motor ${catkin_LIBRARIES})
-
-add_executable(       zeta_motor    src/zeta_motor.cpp)
-target_link_libraries(zeta_motor    ${catkin_LIBRARIES})
-
-add_executable(       jacobian      src/jacobian.cpp)
-target_link_libraries(jacobian      ${catkin_LIBRARIES} ${Boost_LIBRARIES})
-
 add_executable(       tmp           src/tmp.cpp)
 target_link_libraries(tmp           ${catkin_LIBRARIES})

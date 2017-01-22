@@ -325,10 +325,22 @@ andreas_arm_description_BINARY_DIR:STATIC=/home/criag/andreas_arm/build/andreas_
 andreas_arm_description_SOURCE_DIR:STATIC=/home/criag/andreas_arm/src/andreas_arm_description
 
 //Value Computed by CMake
+andreas_arm_drivers_BINARY_DIR:STATIC=/home/criag/andreas_arm/build/andreas_arm_drivers
+
+//Value Computed by CMake
+andreas_arm_drivers_SOURCE_DIR:STATIC=/home/criag/andreas_arm/src/andreas_arm_drivers
+
+//Value Computed by CMake
 andreas_arm_gazebo_BINARY_DIR:STATIC=/home/criag/andreas_arm/build/andreas_arm_gazebo
 
 //Value Computed by CMake
 andreas_arm_gazebo_SOURCE_DIR:STATIC=/home/criag/andreas_arm/src/andreas_arm_gazebo
+
+//Value Computed by CMake
+andreas_arm_translators_BINARY_DIR:STATIC=/home/criag/andreas_arm/build/andreas_arm_translators
+
+//Value Computed by CMake
+andreas_arm_translators_SOURCE_DIR:STATIC=/home/criag/andreas_arm/src/andreas_arm_translators
 
 //The directory containing a CMake configuration file for catkin.
 catkin_DIR:PATH=/opt/ros/kinetic/share/catkin/cmake
@@ -684,7 +696,7 @@ CMAKE_MODULE_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_NM
 CMAKE_NM-ADVANCED:INTERNAL=1
 //number of local generators
-CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=6
+CMAKE_NUMBER_OF_MAKEFILES:INTERNAL=8
 //ADVANCED property for variable: CMAKE_OBJCOPY
 CMAKE_OBJCOPY-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_OBJDUMP

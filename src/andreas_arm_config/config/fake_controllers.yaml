@@ -1,0 +1,9 @@
+controller_list:
+  - name: fake_arm_controller
+    joints:
+      - alpha_joint
+      - beta_joint
+      - gamma_joint
+      - delta_joint
+      - epsilon_joint
+      - zeta_joint

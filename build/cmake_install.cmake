@@ -120,6 +120,8 @@ if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   include("/home/criag/andreas_arm/build/andreas_arm_config/cmake_install.cmake")
   include("/home/criag/andreas_arm/build/andreas_arm_description/cmake_install.cmake")
   include("/home/criag/andreas_arm/build/andreas_arm_gazebo/cmake_install.cmake")
+  include("/home/criag/andreas_arm/build/andreas_arm_drivers/cmake_install.cmake")
+  include("/home/criag/andreas_arm/build/andreas_arm_translators/cmake_install.cmake")
   include("/home/criag/andreas_arm/build/andreas_arm_control/cmake_install.cmake")
 
 endif()

@@ -238,7 +238,7 @@
         <xacro:defaultInertial mass="1" />
     </link>
 
-    <joint name="world" type="fixed">
+    <joint name="world_joint" type="fixed">
         <parent link="world" />
         <child link="base_link" />
     </joint>

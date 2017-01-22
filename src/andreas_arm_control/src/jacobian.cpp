@@ -19,6 +19,7 @@
 #include <iostream>
 
 #define PLANNING_GROUP "arm"
+#define NODE_NAME "Jacobian"
 
 using namespace std;
 
@@ -31,9 +32,9 @@ ros::Publisher    zetaPub;
 
 void callback(const geometry_msgs::Pose::ConstPtr& msg)
 {
-    cout << "hit" << endl;
-    ROS_INFO("Hit");
+    ROS_INFO_NAMED(NODE_NAME, "Hit");
     moveit::planning_interface::MoveGroupInterface moveGroup(PLANNING_GROUP);
+    ROS_INFO_NAMED(NODE_NAME, "group");
 
     double x = msg->position.x;
     double y = msg->position.y;
@@ -48,7 +49,8 @@ void callback(const geometry_msgs::Pose::ConstPtr& msg)
 
     moveit::planning_interface::MoveGroupInterface::Plan plan;
     bool success = moveGroup.plan(plan);
-    ROS_INFO_NAMED("Jacobian", "Planning %s", success ? "done" : "failed");
+    ROS_INFO_NAMED(NODE_NAME, "planned");
+    ROS_INFO_NAMED(NODE_NAME, "Planning %s", success ? "done" : "failed");
 
     if (!success)
         return;
@@ -69,12 +71,12 @@ void callback(const geometry_msgs::Pose::ConstPtr& msg)
     epsilonMsg.data = joints[4];
     zetaMsg.data    = joints[5];
 
-    ROS_INFO_NAMED("Jacobian", "Alpha   %f", joints[0]);
-    ROS_INFO_NAMED("Jacobian", "Beta    %f", joints[0]);
-    ROS_INFO_NAMED("Jacobian", "Gamma   %f", joints[0]);
-    ROS_INFO_NAMED("Jacobian", "Delta   %f", joints[0]);
-    ROS_INFO_NAMED("Jacobian", "Epsilon %f", joints[0]);
-    ROS_INFO_NAMED("Jacobian", "Zeta    %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Alpha   %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Beta    %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Gamma   %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Delta   %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Epsilon %f", joints[0]);
+    ROS_INFO_NAMED(NODE_NAME, "Zeta    %f", joints[0]);
 
     alphaPub.publish(    alphaMsg);
     betaPub.publish(      betaMsg);
@@ -86,12 +88,11 @@ void callback(const geometry_msgs::Pose::ConstPtr& msg)
 
 int main(int argc, char **argv)
 {
-    cout << "starting" << endl;
-    ros::init(argc, argv, "jacobian");
+    ROS_INFO_NAMED(NODE_NAME, "starting");
+    ros::init(argc, argv, NODE_NAME);
     
     ros::NodeHandle nh;
     ros::Subscriber sub = nh.subscribe("moveto", 1000, callback);
-    cout << "1" << endl;
 
     alphaPub   = nh.advertise<std_msgs::Float64>(  "alphaMotor", 1000);
     betaPub    = nh.advertise<std_msgs::Float64>(   "betaMotor", 1000);
@@ -99,9 +100,7 @@ int main(int argc, char **argv)
     deltaPub   = nh.advertise<std_msgs::Float64>(  "deltaMotor", 1000);
     epsilonPub = nh.advertise<std_msgs::Float64>("epsilonMotor", 1000);
     zetaPub    = nh.advertise<std_msgs::Float64>(   "zetaMotor", 1000);
-    cout << "2" << endl;
 
-    cout << "asdf" << endl;
     ros::spin();
 
     return 0;

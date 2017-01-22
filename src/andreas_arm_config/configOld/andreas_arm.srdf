@@ -1,0 +1,50 @@
+<?xml version="1.0" ?>
+
+<robot name="andreas_arm">
+    <group name="arm">
+        <link name="world" />
+        <link name="base_link" />
+        <link name="alpha_link" />
+        <link name="beta_link" />
+        <link name="gamma_link" />
+        <link name="delta_link" />
+        <link name="epsilon_link" />
+        <link name="zeta_link" />
+
+        <joint name="world_joint" />
+        <joint name="alpha_joint" />
+        <joint name="beta_joint" />
+        <joint name="gamma_joint" />
+        <joint name="delta_joint" />
+        <joint name="epsilon_joint" />
+        <joint name="zeta_joint" />
+
+        <chain base_link="world" tip_link="zeta_link" />
+    </group>
+
+    <group_state name="home" group="arm">
+        <joint name="alpha_joint" value="0" />
+        <joint name="beta_joint" value="0" />
+        <joint name="gamma_joint" value="0" />
+        <joint name="delta_joint" value="0" />
+        <joint name="epsilon_joint" value="0" />
+        <joint name="zeta_joint" value="0" />
+    </group_state>
+
+    <end_effector name="zeta_link" parent_link="world" group="arm" />
+
+    <disable_collisions link1="alpha_link"   link2="base_link"    reason="Adjacent" />
+    <disable_collisions link1="alpha_link"   link2="beta_link"    reason="Adjacent" />
+    <disable_collisions link1="alpha_link"   link2="gamma_link"   reason="Never"    />
+    <disable_collisions link1="base_link"    link2="beta_link"    reason="Never"    />
+    <disable_collisions link1="beta_link"    link2="delta_link"   reason="Never"    />
+    <disable_collisions link1="beta_link"    link2="epsilon_link" reason="Never"    />
+    <disable_collisions link1="beta_link"    link2="gamma_link"   reason="Adjacent" />
+    <disable_collisions link1="beta_link"    link2="zeta_link"    reason="Never"    />
+    <disable_collisions link1="delta_link"   link2="epsilon_link" reason="Adjacent" />
+    <disable_collisions link1="delta_link"   link2="gamma_link"   reason="Adjacent" />
+    <disable_collisions link1="delta_link"   link2="zeta_link"    reason="Never"    />
+    <disable_collisions link1="epsilon_link" link2="gamma_link"   reason="Never"    />
+    <disable_collisions link1="epsilon_link" link2="zeta_link"    reason="Adjacent" />
+    <disable_collisions link1="gamma_link"   link2="zeta_link"    reason="Never"    />
+</robot>
