@@ -2,38 +2,33 @@
 # Specific joint properties can be changed with the keys [max_position, min_position, max_velocity, max_acceleration]
 # Joint limits can be turned off with [has_velocity_limits, has_acceleration_limits]
 joint_limits:
-  base_joint:
+  alpha_joint:
     has_velocity_limits: true
-    max_velocity: 0.3488
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
-  elbow_joint:
+  beta_joint:
     has_velocity_limits: true
-    max_velocity: 0.4587
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
-  pad1_joint:
+  delta_joint:
     has_velocity_limits: true
-    max_velocity: 2
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
-  pad2_joint:
+  epsilon_joint:
     has_velocity_limits: true
-    max_velocity: 2
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
-  pitch_joint:
+  gamma_joint:
     has_velocity_limits: true
-    max_velocity: 1.4478
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
-  roll_joint:
+  zeta_joint:
     has_velocity_limits: true
-    max_velocity: 1.8491
-    has_acceleration_limits: false
-    max_acceleration: 0
-  shoulder_joint:
-    has_velocity_limits: true
-    max_velocity: 0.4587
+    max_velocity: 0.5
     has_acceleration_limits: false
     max_acceleration: 0
