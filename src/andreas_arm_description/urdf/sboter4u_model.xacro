@@ -1,6 +1,24 @@
 <?xml version="1.0"?>
 
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sboter4u_model">
+
+
+  <xacro:macro name="defaultInertial" params="mass">
+    <inertial>
+      <mass value="${mass}" />
+      <inertia 
+        ixx="1.0" 
+        ixy="0.0" 
+        ixz="0.0"
+        iyy="1.0"
+        iyz="0.0"
+        izz="1.0" />
+    </inertial>
+  </xacro:macro>
+
+  <link
+      name="world" />
+
   <link
     name="base_Link">
     <inertial>
@@ -23,7 +41,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/base_Link.STL" />
+          filename="package://andreas_arm_description/meshes/base_Link.STL" />
       </geometry>
       <material
         name="">
@@ -37,10 +55,18 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/base_Link.STL" />
+          filename="package://andreas_arm_description/meshes/base_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
+  
+  <joint name="world_joint" type="fixed">
+    <parent link="world" />
+    <child link="base_Link" />
+  </joint>
+
+
   <link
     name="shoulder_Link">
     <inertial>
@@ -63,7 +89,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/shoulder_Link.STL" />
+          filename="package://andreas_arm_description/meshes/shoulder_Link.STL" />
       </geometry>
       <material
         name="">
@@ -77,9 +103,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/shoulder_Link.STL" />
+          filename="package://andreas_arm_description/meshes/shoulder_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="base_joint"
@@ -102,6 +129,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="baseTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="base_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="base_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
   <link
     name="elbow_Link">
     <inertial>
@@ -124,7 +163,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/elbow_Link.STL" />
+          filename="package://andreas_arm_description/meshes/elbow_Link.STL" />
       </geometry>
       <material
         name="">
@@ -138,9 +177,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/elbow_Link.STL" />
+          filename="package://andreas_arm_description/meshes/elbow_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="shoulder_joint"
@@ -163,6 +203,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="shoulderTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="shoulder_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="shoulder_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
   <link
     name="pitch_Link">
     <inertial>
@@ -185,7 +237,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pitch_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pitch_Link.STL" />
       </geometry>
       <material
         name="">
@@ -199,9 +251,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pitch_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pitch_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="elbow_joint"
@@ -224,6 +277,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="elbowTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="elbow_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="elbow_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
   <link
     name="roll_Link">
     <inertial>
@@ -246,7 +311,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/roll_Link.STL" />
+          filename="package://andreas_arm_description/meshes/roll_Link.STL" />
       </geometry>
       <material
         name="">
@@ -260,9 +325,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/roll_Link.STL" />
+          filename="package://andreas_arm_description/meshes/roll_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="pitch_joint"
@@ -285,6 +351,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="pitchTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="pitch_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="pitch_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
   <link
     name="gripper_Link">
     <inertial>
@@ -307,7 +385,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/gripper_Link.STL" />
+          filename="package://andreas_arm_description/meshes/gripper_Link.STL" />
       </geometry>
       <material
         name="">
@@ -321,9 +399,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/gripper_Link.STL" />
+          filename="package://andreas_arm_description/meshes/gripper_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="roll_joint"
@@ -346,6 +425,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="rollTransmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="roll_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="roll_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
   <link
     name="pad1_Link">
     <inertial>
@@ -368,7 +459,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pad1_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pad1_Link.STL" />
       </geometry>
       <material
         name="">
@@ -382,9 +473,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pad1_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pad1_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="pad1_joint"
@@ -407,6 +499,18 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="pad1Transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="pad1_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="pad1_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+  
   <link
     name="pad2_Link">
     <inertial>
@@ -429,7 +533,7 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pad2_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pad2_Link.STL" />
       </geometry>
       <material
         name="">
@@ -443,9 +547,10 @@
         rpy="0 0 0" />
       <geometry>
         <mesh
-          filename="package://sboter4u_model/meshes/pad2_Link.STL" />
+          filename="package://andreas_arm_description/meshes/pad2_Link.STL" />
       </geometry>
     </collision>
+    <xacro:defaultInertial mass="1" />
   </link>
   <joint
     name="pad2_joint"
@@ -468,4 +573,22 @@
       damping="0.01"
       friction="0.01" />
   </joint>
+
+  <transmission name="pad2Transmission">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="pad2_joint" type="SimpleTransmission">
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="pad2_motor">
+      <machanicalReduction>1</machanicalReduction>
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </actuator>
+  </transmission>
+
+    <!-- Gazebo plugin for ROS Control -->
+    <gazebo>
+        <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+            <robotNamespace>/sboter4u</robotNamespace>
+        </plugin>
+    </gazebo>
 </robot>

@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
-
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sboter4u_model">
+<robot
+  name="sboter4u_model">
   <link
     name="base_Link">
     <inertial>
