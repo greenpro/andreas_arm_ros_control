@@ -15,7 +15,7 @@
     </include>
 
     <param name="robot_description"
-        command="$(find xacro)/xacro --inorder '$(find andreas_arm_description)/urdf/scorbot_model.xacro'" />
+        command="$(find xacro)/xacro --inorder '$(find andreas_arm_description)/urdf/scorbot_description.xacro'" />
 
     <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" respawn="false" output="screen"
         args="-urdf -model sboter4u -param robot_description" />
