@@ -1,0 +1,16 @@
+<launch>
+    <arg name="load_robot_description" default="false" />
+
+    <param if="$(arg load_robot_description)" name="robot_description" command="$(find xacro)/xacro.py '$(find andreas_arm_description)/urdf/scorbot_description.xacro'" />
+
+    <param name="robot_description_semantic" textfile="$(find andreas_arm_config)/config/scorbot.srdf" />
+
+    <group ns="robot_description_planning">
+        <rosparam command="load" file="$(find andreas_arm_config)/config/scorbot_joint_limits.yaml" />
+    </group>
+
+    <group ns="robot_description_kinematics">
+        <rosparam command="load" file="$(find andreas_arm_config)/config/scorbot_kinematics.yaml" />
+    </group>
+
+</launch>

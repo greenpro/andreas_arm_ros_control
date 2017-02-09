@@ -1245,6 +1245,19 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 #=============================================================================
+# Target rules for targets named jacobian
+
+# Build rule for target.
+jacobian: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 jacobian
+.PHONY : jacobian
+
+# fast build rule for target.
+jacobian/fast:
+	$(MAKE) -f andreas_arm_control/CMakeFiles/jacobian.dir/build.make andreas_arm_control/CMakeFiles/jacobian.dir/build
+.PHONY : jacobian/fast
+
+#=============================================================================
 # Target rules for targets named sensor_msgs_generate_messages_lisp
 
 # Build rule for target.
@@ -1535,6 +1548,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... jacobian"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_py"
 	@echo "... trajectory_msgs_generate_messages_eus"

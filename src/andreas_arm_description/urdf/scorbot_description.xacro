@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 
-<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="sboter4u_model">
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro" name="scorbot_model">
 
 
   <xacro:macro name="defaultInertial" params="mass">
@@ -588,7 +588,7 @@
     <!-- Gazebo plugin for ROS Control -->
     <gazebo>
         <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
-            <robotNamespace>/sboter4u</robotNamespace>
+            <robotNamespace>/scorbot</robotNamespace>
         </plugin>
     </gazebo>
 </robot>

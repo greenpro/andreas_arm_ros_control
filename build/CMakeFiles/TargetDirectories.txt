@@ -135,6 +135,7 @@
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_cpp.dir
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/actionlib_generate_messages_cpp.dir
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_py.dir
+/home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/jacobian.dir
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/object_recognition_msgs_generate_messages_py.dir
 /home/criag/andreas_arm/build/andreas_arm_control/CMakeFiles/trajectory_msgs_generate_messages_eus.dir

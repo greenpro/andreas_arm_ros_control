@@ -976,6 +976,21 @@ sensor_msgs_generate_messages_py/fast:
 .PHONY : sensor_msgs_generate_messages_py/fast
 
 # Convenience name for target.
+andreas_arm_control/CMakeFiles/jacobian.dir/rule:
+	cd /home/criag/andreas_arm/build && $(MAKE) -f CMakeFiles/Makefile2 andreas_arm_control/CMakeFiles/jacobian.dir/rule
+.PHONY : andreas_arm_control/CMakeFiles/jacobian.dir/rule
+
+# Convenience name for target.
+jacobian: andreas_arm_control/CMakeFiles/jacobian.dir/rule
+
+.PHONY : jacobian
+
+# fast build rule for target.
+jacobian/fast:
+	cd /home/criag/andreas_arm/build && $(MAKE) -f andreas_arm_control/CMakeFiles/jacobian.dir/build.make andreas_arm_control/CMakeFiles/jacobian.dir/build
+.PHONY : jacobian/fast
+
+# Convenience name for target.
 andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule:
 	cd /home/criag/andreas_arm/build && $(MAKE) -f CMakeFiles/Makefile2 andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
 .PHONY : andreas_arm_control/CMakeFiles/sensor_msgs_generate_messages_lisp.dir/rule
@@ -1200,6 +1215,33 @@ moveit_ros_planning_gencfg/fast:
 	cd /home/criag/andreas_arm/build && $(MAKE) -f andreas_arm_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build.make andreas_arm_control/CMakeFiles/moveit_ros_planning_gencfg.dir/build
 .PHONY : moveit_ros_planning_gencfg/fast
 
+src/jacobian.o: src/jacobian.cpp.o
+
+.PHONY : src/jacobian.o
+
+# target to build an object file
+src/jacobian.cpp.o:
+	cd /home/criag/andreas_arm/build && $(MAKE) -f andreas_arm_control/CMakeFiles/jacobian.dir/build.make andreas_arm_control/CMakeFiles/jacobian.dir/src/jacobian.cpp.o
+.PHONY : src/jacobian.cpp.o
+
+src/jacobian.i: src/jacobian.cpp.i
+
+.PHONY : src/jacobian.i
+
+# target to preprocess a source file
+src/jacobian.cpp.i:
+	cd /home/criag/andreas_arm/build && $(MAKE) -f andreas_arm_control/CMakeFiles/jacobian.dir/build.make andreas_arm_control/CMakeFiles/jacobian.dir/src/jacobian.cpp.i
+.PHONY : src/jacobian.cpp.i
+
+src/jacobian.s: src/jacobian.cpp.s
+
+.PHONY : src/jacobian.s
+
+# target to generate assembly for a file
+src/jacobian.cpp.s:
+	cd /home/criag/andreas_arm/build && $(MAKE) -f andreas_arm_control/CMakeFiles/jacobian.dir/build.make andreas_arm_control/CMakeFiles/jacobian.dir/src/jacobian.cpp.s
+.PHONY : src/jacobian.cpp.s
+
 src/tmp.o: src/tmp.cpp.o
 
 .PHONY : src/tmp.o
@@ -1319,6 +1361,7 @@ help:
 	@echo "... sensor_msgs_generate_messages_cpp"
 	@echo "... actionlib_generate_messages_cpp"
 	@echo "... sensor_msgs_generate_messages_py"
+	@echo "... jacobian"
 	@echo "... sensor_msgs_generate_messages_lisp"
 	@echo "... object_recognition_msgs_generate_messages_py"
 	@echo "... trajectory_msgs_generate_messages_eus"
@@ -1336,6 +1379,9 @@ help:
 	@echo "... trajectory_msgs_generate_messages_cpp"
 	@echo "... octomap_msgs_generate_messages_nodejs"
 	@echo "... moveit_ros_planning_gencfg"
+	@echo "... src/jacobian.o"
+	@echo "... src/jacobian.i"
+	@echo "... src/jacobian.s"
 	@echo "... src/tmp.o"
 	@echo "... src/tmp.i"
 	@echo "... src/tmp.s"

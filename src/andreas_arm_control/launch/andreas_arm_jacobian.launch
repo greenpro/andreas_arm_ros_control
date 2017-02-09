@@ -18,17 +18,13 @@
   
   <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher" respawn="true" output="screen" />
 
-  <!--include file="$(find andreas_arm_config)/launch/moveit_rviz.launch">
-    <arg name="config" value="true"/>
-  </include-->
-
   <node name="jacobian" pkg="andreas_arm_control" type="jacobian" respawn="false" launch-prefix="$(arg launch_prefix)" output="screen">
     <param name="planning_plugin" value="$(arg planning_plugin)" />
     <param name="request_adapters" value="$(arg planning_adapters)" />
     <param name="start_state_max_bounds_error" value="0.1" />
   </node>
 
-  <rosparam command="load" file="$(find andreas_arm_config)/config/kinematics.yaml"/>
-  <rosparam command="load" file="$(find andreas_arm_config)/config/ompl_planning.yaml"/>
+  <rosparam command="load" file="$(find andreas_arm_config)/config/andreas_arm_kinematics.yaml"/>
+  <rosparam command="load" file="$(find andreas_arm_config)/config/andreas_arm_ompl_planning.yaml"/>
 
 </launch>
