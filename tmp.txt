@@ -1,2 +1,3 @@
 roslaunch andreas_arm_gazebo andreas_arm_world.launch
 roslaunch andreas_arm_control andreas_arm_control.launch
+asdf
