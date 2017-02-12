@@ -4,7 +4,7 @@
 
     <!-- Load the controllers -->
     <node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
-        output="screen" ns="/sboter4u" args="joint_state_controller
+        output="screen" ns="/scorbot" args="joint_state_controller
                                                 base_position_controller
                                                 shoulder_position_controller
                                                 elbow_position_controller
