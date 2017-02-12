@@ -43,10 +43,12 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/criag/andreas_arm/src
+#CMAKE_SOURCE_DIR = /home/crriag/andreas_arm/src
+CMAKE_SOURCE_DIR = ~/andreas_arm_ros_control/src
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/criag/andreas_arm/build
+#CMAKE_BINARY_DIR = /home/crriag/andreas_arm/build
+CMAKE_BINARY_DIR = ~/andreas_arm_ros_control/build
 
 # Utility rule file for std_msgs_generate_messages_eus.
 
@@ -63,10 +65,12 @@ andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/build: std_msg
 .PHONY : andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/build
 
 andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/clean:
-	cd /home/criag/andreas_arm/build/andreas_arm_drivers && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_eus.dir/cmake_clean.cmake
+#	cd /home/crriag/andreas_arm/build/andreas_arm_drivers && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_eus.dir/cmake_clean.cmake
+	cd ~/andreas_arm_ros_control/build/andreas_arm_ros_control_drivers && $(CMAKE_COMMAND) -P CMakeFiles/std_msgs_generate_messages_eus.dir/cmake_clean.cmake
 .PHONY : andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/clean
 
 andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/depend:
-	cd /home/criag/andreas_arm/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/criag/andreas_arm/src /home/criag/andreas_arm/src/andreas_arm_drivers /home/criag/andreas_arm/build /home/criag/andreas_arm/build/andreas_arm_drivers /home/criag/andreas_arm/build/andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+#	cd /home/crriag/andreas_arm/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/crriag/andreas_arm/src /home/crriag/andreas_arm/src/andreas_arm_drivers /home/crriag/andreas_arm/build /home/crriag/andreas_arm/build/andreas_arm_drivers /home/crriag/andreas_arm/build/andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
+	cd ~/andreas_arm_ros_control/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" ~/andreas_arm_ros_control/src ~/andreas_arm_ros_control/src/andreas_arm_drivers ~/andreas_arm_ros_control/build ~/andreas_arm_ros_control/build/andreas_arm_drivers ~/andreas_arm_ros_control/build/andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : andreas_arm_drivers/CMakeFiles/std_msgs_generate_messages_eus.dir/depend
 

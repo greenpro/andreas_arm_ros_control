@@ -4,8 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/criag/andreas_arm/src/andreas_arm_drivers/src/epsilon_driver.cpp" "/home/criag/andreas_arm/build/andreas_arm_drivers/CMakeFiles/epsilon_driver.dir/src/epsilon_driver.cpp.o"
+  "~/andreas_arm_ros_control/src/andreas_arm_drivers/src/epsilon_driver.cpp" "~/andreas_arm_ros_control/build/andreas_arm_drivers/CMakeFiles/epsilon_driver.dir/src/epsilon_driver.cpp.o"
   )
+#  "/home/crriag/andreas_arm/src/andreas_arm_drivers/src/epsilon_driver.cpp" "/home/crriag/andreas_arm/build/andreas_arm_drivers/CMakeFiles/epsilon_driver.dir/src/epsilon_driver.cpp.o"
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # Preprocessor definitions for this target.
@@ -18,8 +19,9 @@ set(CMAKE_TARGET_DEFINITIONS_CXX
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "/opt/ros/kinetic/include"
-  "/home/criag/andreas_arm/src/andreas_arm_drivers/include"
+  "~/andreas_arm_ros_control/src/andreas_arm_drivers/include"
   )
+#  "/home/crriag/andreas_arm/src/andreas_arm_drivers/include"
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES

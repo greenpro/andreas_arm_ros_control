@@ -201,8 +201,8 @@ catkin_package(
 
 include_directories(include ${catkin_INCLUDE_DIRS})
 
-add_executable(       jacobian      src/jacobian.cpp)
-target_link_libraries(jacobian      ${catkin_LIBRARIES})
+#add_executable(       jacobian      src/jacobian.cpp)
+#target_link_libraries(jacobian      ${catkin_LIBRARIES})
 
 add_executable(       usb           src/usb.cpp)
 target_link_libraries(usb           ${catkin_LIBRARIES})
