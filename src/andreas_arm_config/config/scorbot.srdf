@@ -10,12 +10,14 @@
     <!--CHAINS: When a chain is specified, all the links along the chain (including endpoints) are included in the group. Additionally, all the joints that are parents to included links are also included. This means that joints along the chain and the parent joint of the base link are included in the group-->
     <!--SUBGROUPS: Groups can also be formed by referencing to already defined group names-->
     <group name="main_group">
+        <link name="world" />
         <link name="base_Link" />
         <link name="shoulder_Link" />
         <link name="elbow_Link" />
         <link name="pitch_Link" />
         <link name="roll_Link" />
         <link name="gripper_Link" />
+        <joint name="world_joint" />
         <joint name="base_joint" />
         <joint name="shoulder_joint" />
         <joint name="elbow_joint" />

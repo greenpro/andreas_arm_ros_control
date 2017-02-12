@@ -1,0 +1,8 @@
+prefix=/home/criag/andreas_arm_ros_control/devel
+
+Name: moveit_generated
+Description: Description of moveit_generated
+Version: 0.3.0
+Cflags: 
+Libs: -L/home/criag/andreas_arm_ros_control/devel/lib 
+Requires: 

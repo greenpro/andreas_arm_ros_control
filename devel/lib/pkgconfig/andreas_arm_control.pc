@@ -1,8 +1,8 @@
-prefix=/home/criag/andreas_arm/devel
+prefix=/home/criag/andreas_arm_ros_control/devel
 
 Name: andreas_arm_control
 Description: Description of andreas_arm_control
 Version: 0.0.0
 Cflags: -I/usr/include/eigen3
-Libs: -L/home/criag/andreas_arm/devel/lib 
+Libs: -L/home/criag/andreas_arm_ros_control/devel/lib 
 Requires: moveit_core moveit_ros_planning_interface interactive_markers

@@ -1,2 +1,2 @@
 - setup-file:
-    local-name: /home/criag/andreas_arm/install/setup.sh
+    local-name: /home/criag/andreas_arm_ros_control/install/setup.sh

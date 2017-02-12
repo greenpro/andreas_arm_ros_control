@@ -1,2 +1,2 @@
-andreas_arm_config:andreas_arm_control:andreas_arm_description:andreas_arm_drivers:andreas_arm_gazebo:andreas_arm_translators
--DCATKIN_DEVEL_PREFIX=/home/criag/andreas_arm/devel -DCMAKE_INSTALL_PREFIX=/home/criag/andreas_arm/install -G Unix Makefiles
+andreas_arm_config:andreas_arm_control:andreas_arm_description:andreas_arm_drivers:andreas_arm_gazebo:andreas_arm_translators:moveit_generated
+-DCATKIN_DEVEL_PREFIX=/home/criag/andreas_arm_ros_control/devel -DCMAKE_INSTALL_PREFIX=/home/criag/andreas_arm_ros_control/install -G Unix Makefiles

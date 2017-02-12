@@ -1,8 +1,8 @@
-prefix=/home/criag/andreas_arm/install
+prefix=/home/criag/andreas_arm_ros_control/install
 
 Name: andreas_arm_config
 Description: Description of andreas_arm_config
 Version: 0.0.0
 Cflags: 
-Libs: -L/home/criag/andreas_arm/install/lib 
+Libs: -L/home/criag/andreas_arm_ros_control/install/lib 
 Requires: 
